@@ -7914,7 +7914,7 @@
 /area/security/prisonlockers)
 "aoW" = (
 /obj/machinery/power/treadmill{
-	dir = 4
+	dir = 8
 	},
 /obj/machinery/treadmill_monitor{
 	id = "Cell 3";
@@ -15263,7 +15263,7 @@
 /area/security/lobby)
 "aAA" = (
 /obj/machinery/power/treadmill{
-	dir = 4
+	dir = 8
 	},
 /obj/structure/cable/yellow,
 /obj/machinery/atmospherics/unary/vent_scrubber{
@@ -16235,7 +16235,7 @@
 /area/security/prison/cell_block/A)
 "aCr" = (
 /obj/machinery/power/treadmill{
-	dir = 4
+	dir = 8
 	},
 /obj/machinery/treadmill_monitor{
 	id = "Cell 4";
