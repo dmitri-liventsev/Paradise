@@ -284,15 +284,18 @@
 	return owner && (flags & flag)
 
 /datum/nano_module/appearance_changer/proc/can_change_skin_tone()
-	return owner && (flags & APPEARANCE_SKIN) && ((owner.dna.species.bodyflags & HAS_SKIN_TONE) || (owner.dna.species.bodyflags & HAS_ICON_SKIN_TONE))
+	return owner && (flags & APPEARANCE_SKIN) && owner.dna && ((owner.dna.species.bodyflags & HAS_SKIN_TONE) || (owner.dna.species.bodyflags & HAS_ICON_SKIN_TONE))
 
 /datum/nano_module/appearance_changer/proc/can_change_skin_color()
-	return owner && (flags & APPEARANCE_SKIN) && (owner.dna.species.bodyflags & HAS_SKIN_COLOR)
+	return owner && (flags & APPEARANCE_SKIN) && owner.dna && (owner.dna.species.bodyflags & HAS_SKIN_COLOR)
 
 /datum/nano_module/appearance_changer/proc/can_change_head_accessory()
 	if(!head_organ)
 		log_runtime(EXCEPTION("Missing head!"), owner)
-		return 0
+		return FALSE
+	if(!head_organ.dna)
+		log_runtime(EXCEPTION("Missing head DNA!"), owner)
+		return FALSE
 	return owner && (flags & APPEARANCE_HEAD_ACCESSORY) && (head_organ.dna.species.bodyflags & HAS_HEAD_ACCESSORY)
 
 /datum/nano_module/appearance_changer/proc/can_change_markings(var/location = "body")
@@ -301,7 +304,10 @@
 	if(location == "head")
 		if(!head_organ)
 			log_debug("Missing head!")
-			return 0
+			return FALSE
+		if(!head_organ.dna)
+			log_debug("Missing head DNA!")
+			return FALSE
 		body_flags = head_organ.dna.species.bodyflags
 		marking_flag = HAS_HEAD_MARKINGS
 	if(location == "body")
@@ -317,7 +323,10 @@
 /datum/nano_module/appearance_changer/proc/can_change_alt_head()
 	if(!head_organ)
 		log_debug("Missing head!")
-		return 0
+		return FALSE
+	if(!head_organ.dna)
+		log_debug("Missing head DNA!")
+		return FALSE
 	return owner && (flags & APPEARANCE_ALT_HEAD) && (head_organ.dna.species.bodyflags & HAS_ALT_HEADS)
 
 /datum/nano_module/appearance_changer/proc/cut_and_generate_data()
