@@ -400,13 +400,12 @@
 	},
 /area/security/main)
 "acF" = (
-/obj/effect/spawner/window/reinforced,
-/obj/structure/cable{
-	d2 = 4;
-	icon_state = "0-4"
+/mob/living/simple_animal/crab/Coffee,
+/turf/simulated/floor/plasteel{
+	icon_state = "vault";
+	tag = "icon-vault"
 	},
-/turf/simulated/floor/plating,
-/area/security/prisonershuttle)
+/area/crew_quarters/dorms)
 "acG" = (
 /obj/effect/spawner/window/reinforced,
 /obj/structure/cable{
@@ -26103,7 +26102,9 @@
 	},
 /area/medical/chemistry)
 "aWJ" = (
-/mob/living/simple_animal/crab/Coffee,
+/mob/living/simple_animal/walrus{
+	name = "Джеди"
+	},
 /turf/simulated/floor/beach/water{
 	icon_state = "seadeep"
 	},
@@ -120954,7 +120955,7 @@ aaa
 aaa
 aaa
 aaa
-acF
+atM
 acW
 adr
 adK
@@ -133327,7 +133328,7 @@ aFI
 aQE
 aSM
 aUT
-aWT
+acF
 aZC
 bbu
 bdj
