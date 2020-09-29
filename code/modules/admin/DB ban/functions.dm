@@ -398,7 +398,7 @@ datum/admins/proc/DB_ban_unban_by_id(var/id)
 		output += "<option value='[j]'>[j]</option>"
 	for(var/j in GLOB.other_roles)
 		output += "<option value='[j]'>[j]</option>"
-	for(var/j in list("commanddept","securitydept","engineeringdept","medicaldept","sciencedept","supportdept","nonhumandept"))
+	for(var/j in list("commanddept","securitydept","engineeringdept","medicaldept","sciencedept","supportdept","nonhumandept","whitelistdept"))
 		output += "<option value='[j]'>[j]</option>"
 	for(var/j in list("Syndicate") + GLOB.antag_roles)
 		output += "<option value='[j]'>[j]</option>"
