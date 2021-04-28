@@ -61,6 +61,15 @@
 /proc/station_time_timestamp(format = "hh:mm:ss", time=world.time)
 	return time2text(station_time(time, TRUE), format)
 
+/proc/game_year()
+	var/serverYear = text2num(station_time_timestamp("YYYY"))
+	if (serverYear < 2100) {
+		serverYear = serverYear + 545
+	}
+
+	return serverYear
+
+
 /* Returns 1 if it is the selected month and day */
 /proc/isDay(var/month, var/day)
 	if(isnum(month) && isnum(day))

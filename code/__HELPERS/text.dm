@@ -521,7 +521,8 @@
 		text = replacetext(text, "\[row\]",		"</td><tr>")
 		text = replacetext(text, "\[cell\]",	"<td>")
 		text = replacetext(text, "\[logo\]",	"&ZeroWidthSpace;<img src = ntlogo.png>")
-		text = replacetext(text, "\[time\]",	"[station_time_timestamp()]") // TO DO
+		text = replacetext(text, "\[time\]",	"[station_time_timestamp()]")
+		text = replacetext(text, "\[date\]",	"[station_time_timestamp("DD.MM.[game_year()]")]")
 		if(!no_font)
 			if(P)
 				text = "<font face=\"[deffont]\" color=[P ? P.colour : "black"]>[text]</font>"
