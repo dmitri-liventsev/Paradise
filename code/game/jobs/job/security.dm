@@ -268,9 +268,9 @@
 	box = /obj/item/storage/box/engineer
 
 
-/datum/job/cadet
-	title = "Cadet"
-	flag = JOB_CADET
+/datum/job/security_cadet
+	title = "Security Cadet"
+	flag = JOB_SECURITY_CADET
 	department_flag = JOBCAT_ENGSEC
 	total_positions = 3
 	spawn_positions = 3
@@ -283,11 +283,11 @@
 	minimal_player_age = 14
 	exp_requirements = 120
 	exp_type = EXP_TYPE_CREW
-	outfit = /datum/outfit/job/cadet
+	outfit = /datum/outfit/job/security_cadet
 
-/datum/outfit/job/cadet
-	name = "Cadet"
-	jobtype = /datum/job/cadet
+/datum/outfit/job/security_cadet
+	name = "Security Cadet"
+	jobtype = /datum/job/security_cadet
 	uniform = /obj/item/clothing/under/rank/security
 	suit = /obj/item/clothing/suit/armor/vest/security
 	gloves = /obj/item/clothing/gloves/color/black
